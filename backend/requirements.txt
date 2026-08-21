@@ -8,3 +8,4 @@ stripe==8.4.0
 #psycopg2-binary==2.9.9
 marshmallow==3.20.2
 gunicorn==21.2.0
+Flask-Migrate==4.1.0
