@@ -4,7 +4,7 @@ from flask import Flask, jsonify
 from dotenv import load_dotenv
 from flask_cors import CORS
 
-from backend.extensions import db, jwt, cors
+from backend.extensions import db, jwt, cors, migrate
 
 def create_app(config=None):
     """Create Flask application."""
@@ -26,6 +26,7 @@ def create_app(config=None):
     # Initialize extensions
     db.init_app(app)
     jwt.init_app(app)
+    migrate.init_app(app, db)
     
     # CORS Configuration
     cors.init_app(app, resources={
